@@ -2,7 +2,7 @@ defmodule ShaderBackend.Router do
   use Plug.Router
 
   plug Corsica,
-    origins: [ "https://invideo-ai.vercel.app",  "http://localhost:3000", "http://localhost:4000", "http://127.0.0.1:3000", "http://127.0.0.1:4000", "*"],  # Allow requests from any origin
+    origins: [ "https://invideo-ai.vercel.app", "https://invideo-ai.onrender.com",  "http://localhost:3000", "http://localhost:4000", "http://127.0.0.1:3000", "http://127.0.0.1:4000"],  # Allow requests from any origin
     allow_headers: ["content-type"],  # Allow the Content-Type header
     allow_credentials: true  # Allow POST requests
     allow_methods: [:post]     
