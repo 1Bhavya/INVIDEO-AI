@@ -9,6 +9,12 @@ defmodule ShaderBackend.Router do
   plug :match
   plug :dispatch
 
+  get "/api/v1/healthcheck" do
+    conn
+    |> put_resp_content_type("application/json")
+    |> send_resp(200, Jason.encode!(%{status: "ok", timestamp: DateTime.utc_now()}))
+  end
+
   post "/generate-shader" do
     {:ok, body, conn} = Plug.Conn.read_body(conn)
     %{"prompt" => prompt} = Jason.decode!(body)
