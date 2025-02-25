@@ -24,6 +24,7 @@ end
   [
     {:plug, "~> 1.14"},
     {:plug_cowboy, "~> 2.6"},
+    {:httpoison, "~> 1.8"},
     {:jason, "~> 1.4"},
     {:req, "~> 0.4"},
     {:corsica, "~> 1.3"}  # Add this line

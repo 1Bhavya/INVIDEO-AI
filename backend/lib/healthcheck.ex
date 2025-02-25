@@ -1,7 +1,9 @@
 defmodule ShaderBackend.HealthCheck do
   use GenServer
+  require Logger
 
   @interval 14 * 60 * 1000 # 14 minutes in milliseconds
+  @health_url "https://invideo-ai.onrender.com/health" # Replace with your actual endpoint
 
   def start_link(_) do
     GenServer.start_link(__MODULE__, %{}, name: __MODULE__)
@@ -23,7 +25,15 @@ defmodule ShaderBackend.HealthCheck do
   end
 
   defp perform_health_check do
-    IO.puts("Performing health check at #{DateTime.utc_now()}")
-    # Add actual health check logic here if needed
+    case HTTPoison.get(@health_url) do
+      {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
+        Logger.info("Health check successful: #{body}")
+
+      {:ok, %HTTPoison.Response{status_code: code}} ->
+        Logger.error("Health check failed with status: #{code}")
+
+      {:error, %HTTPoison.Error{reason: reason}} ->
+        Logger.error("Health check error: #{inspect(reason)}")
+    end
   end
 end
