@@ -16,7 +16,8 @@ export default function ShaderTab() {
     try {
       const response = await fetch('https://invideo-ai.onrender.com/generate-shader', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json'},
+        withCredentials: true,
         body: JSON.stringify({ prompt }),
       });
       
