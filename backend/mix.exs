@@ -5,7 +5,7 @@ defmodule ShaderBackend.MixProject do
     [
       app: :backend,
       version: "0.1.0",
-      elixir: "~> 1.18",
+      elixir: "~> 1.16",
       start_permanent: Mix.env() == :dev,
       deps: deps()
     ]
