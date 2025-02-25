@@ -2,13 +2,12 @@ use wasm_bindgen::prelude::*;
 use evalexpr::*;
 
 #[wasm_bindgen]
-pub fn calculate(input: &str) -> Result<f64, JsError> {
-    web_sys::console::log_1(&format!("Input: {}", input).into());
+pub fn calculate_int_big(input: &str) -> Result<JsValue, JsError> {
     let result = eval(input)?;
-    web_sys::console::log_1(&format!("Result: {:?}", result).into());
+
     match result {
-        Value::Float(f) => Ok(f),
-        Value::Int(i) => Ok(i as f64),
-        _ => Err(JsError::new("Invalid result type")),
+        Value::Int(i) => Ok(JsValue::from_str(&i.to_string())), // JavaScript will treat it as BigInt
+        _ => Err(JsError::new("Result is not an integer")),
     }
 }
+

@@ -27,7 +27,7 @@ defmodule ShaderBackend.Router do
                  %{
                    role: "user",
                    content: """
-                   Generate a WebGL 1.0 compatible fragment shader to create: #{prompt}. The vertex shader draws a full-screen quad, so use the fragment shader to produce the visual effect within that quad. Follow these rules:
+                   Generate a Three JS WebGL 1.0 compatible fragment shader to create: #{prompt}. The vertex shader draws a full-screen quad, so use the fragment shader to produce the visual effect within that quad. Follow these rules:
 
                    1. Declare `varying vec3 v_position`
                    2. Use `gl_FragColor` for output
@@ -41,9 +41,10 @@ defmodule ShaderBackend.Router do
                    precision highp float;
                    varying vec3 v_position;
                    uniform float u_time;
+                   (You can add more here if needed, it's example)
 
                    void main() {
-                     // Your code here to create the effect
+                     // Your code here to create the effect (Be honest)
                    }
                    """
                  }
