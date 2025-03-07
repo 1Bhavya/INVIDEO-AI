@@ -2,7 +2,7 @@
     "routes": [
       {
         "src": "/wasm/(.*)",
-        "dest": "/src/wasm/pkg"
+        "dest": "/public/wasm"
       }
     ]
   }
