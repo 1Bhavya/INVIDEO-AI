@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Tabs, Tab, Box } from '@mui/material';
-import CalculatorTab from './components/CalculatorTab';
-import ShaderTab from './components/ShaderTab';
+import CalculatorTab from './CalculatorTab';
+import ShaderTab from './ShaderTab';
 
 export default function App() {
   const [tabIndex, setTabIndex] = useState(0);
