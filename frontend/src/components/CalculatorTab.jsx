@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import init, { evaluate_expression } from '/wasm/pkg/wasm'; // Import the WASM module
+import init, { evaluate_expression } from './wasm/pkg/wasm'; // Import the WASM module
 
 export default function CalculatorTab() {
   const [input, setInput] = useState('');
