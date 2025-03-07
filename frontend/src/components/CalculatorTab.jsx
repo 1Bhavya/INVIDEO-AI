@@ -28,7 +28,7 @@ export default function CalculatorTab() {
       <button style={{ marginTop:"40px", marginLeft:"33%", color:"white", width: "30%", height: "50px", borderRadius: 10, border:0, backgroundColor: "black", fontSize: 16}} onClick={calculate}>EVALUATE</button>
       <div style={{boxSizing:"border-box",position: 'relative', padding: 16, left:"740px", bottom:"250px", width:'480px', height:'490px', backgroundColor:'black', color:"white"}}>
         <h1 style={{color:"white", fontSize:"24px"}}>Result:</h1>
-        <p style={{fontSize:"48px"}}>{result}</p>
+        <p style={{fontSize:"50px"}}>{result}</p>
         </div>
     </div>
   );
