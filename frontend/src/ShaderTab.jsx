@@ -14,7 +14,7 @@ export default function ShaderTab() {
 
   const generateShader = async () => {
     try {
-      const response = await fetch('https://invideo-ai.onrender.com/generate-shader', {
+      const response = await fetch('https://invideo-ai-dd15.onrender.com/generate-shader', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
         withCredentials: true,
